@@ -17,4 +17,10 @@ use App\Http\Controllers\FILEController;
 Route::get('/', function () {
     return view('home');
 });
+
 Route::get('/generate-pdf', [FILEController::class, 'generatePDF']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
