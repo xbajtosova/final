@@ -26,8 +26,12 @@ Route::get('/generate-pdf', [FILEController::class, 'generatePDF']);
 Auth::routes();
 
 
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['teacher']], function () {
     Route::get('/students', [UserController::class, 'index'])->name('students');
     Route::get('admin-view', [HomeController::class, 'adminView'])->name('admin.view');
  });
+
+Route::get('/generate-csv', [FILEController::class, 'exportCSV']);
+
