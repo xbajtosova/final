@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="is_teacher" class="col-md-4 col-form-label text-md-end">{{ __('I am teacher') }}</label>
+                            <label for="is_teacher" class="col-md-4 col-form-label text-md-end">{{ __('I am a teacher') }}</label>
 
                             <div class="col-md-6">
                                 <input id="is_teacher" type="checkbox" name="is_teacher">
