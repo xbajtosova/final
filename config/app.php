@@ -186,4 +186,9 @@ return [
         "PDF" => Barryvdh\DomPDF\Facade::class,
     ])->toArray(),
 
+    'languages' => [
+        'en' => 'English',
+        'sk' => 'Slovak',
+    ],
+
 ];
