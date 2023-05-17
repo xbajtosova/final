@@ -11,9 +11,8 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tutorial') }}">{{ __('Tutorial') }}</a>
+                    <a class="nav-link" href="{{ route('tutorial') }}">{{ __('Tutorial') }}</a> 
                 </li>
-
             </ul>
 
             <!-- Right Side Of Navbar -->

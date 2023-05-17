@@ -1,4 +1,3 @@
-
 <h1 class="text-center"><strong>{{ __('Tutorial') }}</strong></h1><br>
 <div class="container ml-3">
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload LaTeX File</title>
+    <title>{{__('Upload LaTeX File')}}</title>
 </head>
 <body>
-    <h1>Upload LaTeX File</h1>
+    <h1>{{__('Upload LaTeX File')}}</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -19,12 +19,12 @@
     <form action="{{ route('processUpload') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="latexFile">
-        <button type="submit">Upload</button>
+        <button type="submit">{{__('Upload')}}</button>
     </form>
     <form action="{{ route('processImages') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="imageFile[]" multiple accept="image/*">
-        <button type="submit">Upload Image</button>
+        <button type="submit">{{__('Upload Image')}}</button>
     </form>
 </body>
 </html>
