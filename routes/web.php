@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FILEController;
+use App\Http\Controllers\LatexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +22,27 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/generate-pdf', [FILEController::class, 'generatePDF'])->name('generatePDF');
+Route::get('/tutorial', function () {
+    return view('tutorial');
+})->name('tutorial');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['teacher']], function () {
+    Route::get('/students', [UserController::class, 'index'])->name('students');
+    Route::get('admin-view', [HomeController::class, 'adminView'])->name('admin.view');
+ });
+
+Route::get('/generate-csv', [FILEController::class, 'exportCSV']);
+
+
+
+Route::post('/redirect-to-upload', [LatexController::class, 'redirectToUpload'])->name('redirectToUpload');
+Route::get('/upload', [LatexController::class, 'showUploadForm'])->name('showUploadForm');
+Route::post('/process-image', [LatexController::class, 'processImage'])->name('processImages');
+Route::post('/process-upload', [LatexController::class, 'processUpload'])->name('processUpload');
+Route::get('/problems', [LatexController::class, 'showProblems'])->name('showProblems');
