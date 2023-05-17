@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LatexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::post('/redirect-to-upload', [LatexController::class, 'redirectToUpload'])->name('redirectToUpload');
+Route::get('/upload', [LatexController::class, 'showUploadForm'])->name('showUploadForm');
+Route::post('/process-image', [LatexController::class, 'processImage'])->name('processImages');
+Route::post('/process-upload', [LatexController::class, 'processUpload'])->name('processUpload');
+Route::get('/problems', [LatexController::class, 'showProblems'])->name('showProblems');
