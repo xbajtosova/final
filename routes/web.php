@@ -22,7 +22,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/generate-pdf', [FILEController::class, 'generatePDF']);
+Route::get('/generate-pdf', [FILEController::class, 'generatePDF'])->name('generatePDF');
+Route::get('/tutorial', function () {
+    return view('tutorial');
+})->name('tutorial');
 
 Auth::routes();
 

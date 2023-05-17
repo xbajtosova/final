@@ -1,12 +1,6 @@
-<div>
-    <h1><strong>{{ __('Tutorial') }}</strong></h1>
 
-    <p>
-        {!! __('Nepisat T a C s makcenom, teraz len tak aby sa nepovedalo.')!!}<br>
-        {!! __('SERUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUS')!!}<br>
-        {!! __('NEHEHEHEHEE')!!}<br>
-    </p>
-
+<h1 class="text-center"><strong>{{ __('Tutorial') }}</strong></h1><br>
+<div class="container ml-3">
 
     <h2><strong>{!! __('Usage from the Student Side')!!}</strong></h2>
 
@@ -30,7 +24,7 @@
         {!! __('3. They can generate a table into a CSV file.')!!}<br>
         {!! __('4. They can view which exercises each student generated, submitted, and the submitted results, including correctness and earned points.')!!}<br>
     </p>
+    <br><br>
 
 </div>
-
 

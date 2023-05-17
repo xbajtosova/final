@@ -29,5 +29,10 @@ class FILEController extends Controller
         return response()->download(public_path() . '/students.csv');
     }
 
+    public function showDocumentation()
+    {
+    return view('tutorial');
+    }
+
 
 }
