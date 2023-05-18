@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-    <h2>Students</h2>
+    <h2>{{__('Students')}}</h2>
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>{{__('Name')}}</th>
             </tr>
         </thead>
         <tbody>
