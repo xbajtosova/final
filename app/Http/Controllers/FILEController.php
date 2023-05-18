@@ -16,7 +16,7 @@ class FILEController extends Controller
 
     public function generateCSV()
     {
-        $data = User::select('id', 'name', 'generated_examples', 'solved_examples', 'points')->get();
+        $data = User::select('id', 'name', 'generated_examples', 'solved_examples', 'points')->where('is_teacher', false)->get();
         $handle = fopen(public_path() . '/students.csv', 'w');
         fputcsv($handle, ['ID', 'Name', 'Generated Examples', 'Solved Examples', 'Points']); // Hlavička stĺpcov
         foreach ($data as $row) {

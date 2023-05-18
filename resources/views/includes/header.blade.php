@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            Final Project
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -55,7 +55,7 @@
                         </li>
                     @elseif (Auth::user()->is_teacher == false)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('generate')}}">{{ __('Generate math problem') }}</a>
+                            <a class="nav-link" href="{{ route('generateExample')}}">{{ __('Generate math problem') }}</a>
                         </li>
                     @endif
                     <li class="nav-item dropdown">
