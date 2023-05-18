@@ -2,4 +2,6 @@
 
 @section('content')
 
+@include('item.show-examples')
+
 @endsection
