@@ -36,19 +36,19 @@
             });
 
             $("#checkSolutionButton").click(function(){
-    var userSolution = $("#userSolution").val().trim().replace(/ /g, '');
-    var correctSolution = $("#correctSolution").val().replace(/\n/g, '').trim();
+                var userSolution = $("#userSolution").val().trim().replace(/ /g, '');
+                var correctSolution = $("#correctSolution").val().replace(/\n/g, '').trim();
 
-                
-    console.log('User solution: "' + userSolution + '"');
-    console.log('Correct solution: "' + correctSolution + '"');
-                
-    if (userSolution === correctSolution) {
-        $("#resultMessage").css("color", "green").text("Correct Answer").show();
-    } else {
-        $("#resultMessage").css("color", "red").text("Incorrect").show();
-    }
-});
+                            
+                console.log('User solution: "' + userSolution + '"');
+                console.log('Correct solution: "' + correctSolution + '"');
+                            
+                if (userSolution === correctSolution) {
+                    $("#resultMessage").css("color", "green").text("Correct Answer").show();
+                } else {
+                    $("#resultMessage").css("color", "red").text("Incorrect").show();
+                }
+            });
         });
     </script>
 </body>
