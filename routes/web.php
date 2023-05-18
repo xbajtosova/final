@@ -37,7 +37,10 @@ Route::group(['middleware' => ['teacher']], function () {
     Route::get('admin-view', [HomeController::class, 'adminView'])->name('admin.view');
  });
 
+
 Route::get('/generateCSV', [FILEController::class, 'exportCSV'])->name('exportCSV');
+
+Route::get('/examples', [LatexController::class, 'showExamples'])->name('showExamples');
 
 Route::post('/redirect-to-upload', [LatexController::class, 'redirectToUpload'])->name('redirectToUpload');
 Route::get('/upload', [LatexController::class, 'showUploadForm'])->name('upload');
