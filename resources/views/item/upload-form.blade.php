@@ -10,15 +10,22 @@
             </ul>
         </div>
     @endif
+    @if (Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{{ Session::get('success') }}</li>
+            </ul>
+        </div>
 
+    @endif
     <form action="{{ route('processUpload') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="latexFile">
-        <button type="submit">{{__('Upload')}}</button>
+        <input class="form-control" type="file" name="latexFile">
+        <button class="btn btn-primary mt-1 mb-3" type="submit">{{__('Upload')}}</button>
     </form>
     <form action="{{ route('processImages') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="imageFile[]" multiple accept="image/*">
-        <button type="submit">{{__('Upload Image')}}</button>
+        <input class="form-control" type="file" name="imageFile[]" multiple accept="image/*">
+        <button class="btn btn-primary mt-1" type="submit">{{__('Upload Image')}}</button>
     </form>
 

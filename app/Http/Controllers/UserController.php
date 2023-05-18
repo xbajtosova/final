@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function addGeneratedExample()
     {
-        $user = User::find(auth()->user()->id);
+        $user = auth()->user();
         $user->generated_examples += 1;
         $user->save();
 
@@ -25,8 +25,9 @@ class UserController extends Controller
 
     public function addSolvedExample()
     {
-        $user = User::find(auth()->user()->id);
+        $user = auth()->user();
         $user->solved_examples += 1;
+        $user->generated_examples -= 1;
         $user->save();
 
         return redirect()->back();
@@ -34,7 +35,7 @@ class UserController extends Controller
 
     public function addPoints()
     {
-        $user = User::find(auth()->user()->id);
+        $user = auth()->user();
         $user->points += 1;
         $user->save();
 

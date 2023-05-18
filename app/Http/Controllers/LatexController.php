@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
+use App\Models\User;
 
 use App\Models\Example;
 
@@ -27,11 +28,14 @@ class LatexController extends Controller
     public function generateExample()
     {
         $example = \App\Models\Example::inRandomOrder()->first();
-    
+        $user = User::find(auth()->user()->id);
+        $user->generated_examples += 1;
+        $user->save();
+
         return view('item.show-examples', ['example' => $example]);
     }
-     
-   
+
+
     public function processUpload(Request $request)
     {
         $request->validate([
@@ -59,7 +63,7 @@ class LatexController extends Controller
             $example->answer = $problem['solution'];
             $example->save();
         }
-    
+
         return view('item.show-problems', ['problems' => $allProblems]);
     }
 
@@ -80,7 +84,7 @@ class LatexController extends Controller
             }
         }
 
-        return view('welcome');
+       return redirect()->back()->with('success', trans('Image uploaded successfully'));
     }
 
     public function showProblems(Request $request)

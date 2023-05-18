@@ -27,9 +27,9 @@
     </table>
     <div class="row mb-0">
         <div class="col-md-6 offset-md-4">
-            <button href="{{ route('exportCSV') }}" type="submit" class="btn btn-primary">
+            <a href="{{ route('exportCSV') }}" type="submit" class="btn btn-primary">
                 {{ __('Download CSV') }}
-            </button>
+            </a>
         </div>
     </div>
 </div>
