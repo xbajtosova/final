@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 
+use App\Models\Example;
+
 class LatexController extends Controller
 {
 
@@ -17,6 +19,11 @@ class LatexController extends Controller
     {
         return view('item.upload-form');
     }
+    public function showExamples() {
+        $examples = \App\Models\Example::all();
+        return view('item.show-examples', compact('examples'));
+    }
+    
 
     public function processUpload(Request $request)
     {
@@ -38,6 +45,13 @@ class LatexController extends Controller
     
         // Store all problems in the session
         session()->put('problems', $allProblems);
+
+        foreach ($extractedProblems as $problem) {
+            $example = new Example;
+            $example->example = $problem['task'];
+            $example->answer = $problem['solution'];
+            $example->save();
+        }
     
         return view('item.show-problems', ['problems' => $allProblems]);
     }
