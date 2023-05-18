@@ -7,20 +7,20 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-    <h1>Examples</h1>
-    <a href="{{ route('generateExample') }}" class="btn btn-primary">Generate Math Problem</a>
+    <h1>{{ __('Examples') }}</h1>
+    <a href="{{ route('generateExample') }}" class="btn btn-primary">{{ __('Generate math problem') }}</a>
     @if (!empty($example))
         <div class="example">
-            <h3>Math problem ID: {{ $example->id }}</h3>
+            <h3>{{ __('Math problem ID:') }} {{ $example->id }}</h3>
             <p>{!! $example->example !!}</p>
             <button id="hintButton" class="btn btn-secondary">Hint</button>
             <p id="solution" style="display: none;">{!! $example->answer !!}</p>
-            <p id="correctInput" style="display: none;"><strong>Correct Input:</strong> <span id="correctInputValue"></span></p>
+            <p id="correctInput" style="display: none;"><strong>{{ __('Correct input:') }}</strong> <span id="correctInputValue"></span></p>
         </div>
         <div class="user-input">
             <h3>Your solution:</h3>
             <textarea id="userSolution" class="form-control"></textarea>
-            <button id="checkSolutionButton" class="btn btn-primary mt-3">Check Solution</button>
+            <button id="checkSolutionButton" class="btn btn-primary mt-3">{{ __('Check Solution') }}</button>
             <p id="resultMessage" style="display: none;"></p>
         </div>
         <!-- Hidden input field to hold the correct solution -->
