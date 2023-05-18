@@ -11,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('tutorial') }}">{{ __('Tutorial') }}</a> 
+                    <a class="nav-link" href="{{ route('tutorial') }}">{{ __('Tutorial') }}</a>
                 </li>
             </ul>
 
@@ -29,7 +29,9 @@
                                     @endforeach
                                 </div>
                             </li>
-                        @endif
+                @endif
+
+
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
@@ -46,7 +48,14 @@
                 @else
                     @if (Auth::user()->is_teacher)
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('upload')}}">{{ __('Upload files') }}</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('students')}}">{{ __('Students') }}</a>
+                        </li>
+                    @elseif (Auth::user()->is_teacher == false)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('generate')}}">{{ __('Generate math problem') }}</a>
                         </li>
                     @endif
                     <li class="nav-item dropdown">

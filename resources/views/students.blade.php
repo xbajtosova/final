@@ -8,6 +8,9 @@
             <tr>
                 <th>ID</th>
                 <th>{{__('Name')}}</th>
+                <th>{{__('Generated Examples')}}</th>
+                <th>{{__('Solved Examples')}}</th>
+                <th>{{__('Points')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -15,9 +18,19 @@
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
+                <td>{{ $user->generated_examples }}</td>
+                <td>{{ $user->solved_examples }}</td>
+                <td>{{ $user->points }}</td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <div class="row mb-0">
+        <div class="col-md-6 offset-md-4">
+            <button href="{{ route('exportCSV') }}" type="submit" class="btn btn-primary">
+                {{ __('Download CSV') }}
+            </button>
+        </div>
+    </div>
 </div>
 @endsection
