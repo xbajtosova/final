@@ -27,7 +27,6 @@ Route::get('/tutorial', function () {
     return view('tutorial');
 })->name('tutorial');
 
-Auth::routes();
 
 
 
@@ -39,7 +38,7 @@ Route::group(['middleware' => ['teacher']], function () {
 
 Route::get('/generate-csv', [FILEController::class, 'exportCSV']);
 
-
+Route::get('/generateExample', [LatexController::class, 'generateExample'])->name('generateExample');
 Route::get('/examples', [LatexController::class, 'showExamples'])->name('showExamples');
 Route::post('/redirect-to-upload', [LatexController::class, 'redirectToUpload'])->name('redirectToUpload');
 Route::get('/upload', [LatexController::class, 'showUploadForm'])->name('showUploadForm');

@@ -23,8 +23,15 @@ class LatexController extends Controller
         $examples = \App\Models\Example::all();
         return view('item.show-examples', compact('examples'));
     }
-    
 
+    public function generateExample()
+    {
+        $example = \App\Models\Example::inRandomOrder()->first();
+    
+        return view('item.show-examples', ['example' => $example]);
+    }
+     
+   
     public function processUpload(Request $request)
     {
         $request->validate([
