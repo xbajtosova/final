@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{__('Upload LaTeX File')}}</title>
-</head>
-<body>
+
     <h1>{{__('Upload LaTeX File')}}</h1>
 
     @if ($errors->any())
@@ -26,5 +21,4 @@
         <input type="file" name="imageFile[]" multiple accept="image/*">
         <button type="submit">{{__('Upload Image')}}</button>
     </form>
-</body>
-</html>
+
