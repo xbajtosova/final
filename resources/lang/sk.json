@@ -787,5 +787,10 @@
     "Check Solution": "Skontrolovať riešenie",
     "Correct answer:": "Správna odpoveď:",
     "Incorrect answer:": "Nesprávna odpoveď:",
-    "Examples": "Príklady"
+    "Examples": "Príklady",
+    "Generated Examples": "Vygenerované príklady",
+    "Solved Examples": "Vyriešené príklady",
+    "Points": "Body",
+    "Download CSV": "Stiahnuť CSV"
+
 }
